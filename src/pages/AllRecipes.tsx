@@ -1,5 +1,6 @@
 import { recipes } from '../data/recipes'
 import RecipeCard from '../components/RecipeCard'
+import './AllRecipes.css'
 
 function AllRecipes() {
   return (

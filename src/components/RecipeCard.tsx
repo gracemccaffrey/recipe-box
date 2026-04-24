@@ -1,4 +1,5 @@
 import type { Recipe } from '../types'
+import './RecipeCard.css'
 
 interface RecipeCardProps {
     recipe : Recipe
@@ -10,12 +11,17 @@ function RecipeCard({ recipe }: RecipeCardProps) {
     return (
         <div className="recipe-card">
             <img src={recipe.photoUrl} alt={recipe.title} />
-            <h2>{recipe.title}</h2>
-            <div className="recipe-card-body">
-                <div className="recipe-card-meta">
-                    <span>{totalTime} min</span>
-                    <span className="recipe-card-category">{recipe.category}</span>
-                    <span>{recipe.difficulty}</span>
+            <div className="recipe-card-content">
+                <h2>{recipe.title}</h2>
+                <div className="recipe-card-body">
+                    <div className="recipe-card-meta">
+                        <span className="recipe-card-time-difficulty">
+                            <span>{totalTime} min</span>
+                            <span className="recipe-card-divider"> | </span>
+                            <span>{recipe.difficulty}</span>
+                        </span>
+                        <span className="recipe-card-category">{recipe.category}</span>
+                    </div>
                 </div>
             </div>
         </div>
