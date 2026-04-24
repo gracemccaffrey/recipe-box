@@ -1,0 +1,121 @@
+/* --- Desktop Header --- */ 
+.header-desktop { 
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    background-color: var(--color-primary);
+    border-bottom:1px solid var(--color-primary-hover);
+    position: sticky;
+    top: 0; 
+    z-index: 100;
+}
+.header-brand { 
+    font-family: var(--font-heading);
+    font-size: 1.5rem; 
+    color:var(--color-surface); 
+    text-transform: uppercase;
+}
+
+.header-nav {
+    display: flex; 
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: var(--color-surface); 
+    font-size: 0.95rem; 
+    display: inline-flex; 
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-nav a::after {
+    content: attr(data-text);
+    font-weight: 600;
+    visibility: hidden; 
+    height: 0; 
+    overflow: hidden; 
+    pointer-events: none;
+}
+
+.header-nav a:hover{
+    border-bottom: 2px solid var(--color-surface);
+}
+
+.header-nav a.active {
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-surface);
+}
+
+.nav-add-button { 
+    background-color: var(--color-surface);
+    color: var(--color-primary) !important;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+}
+
+.nav-add-button:hover {
+    background-color: var(--color-accent) !important;
+    border-bottom: none !important;
+}
+
+/* --- Mobile Bottom Nav --- */ 
+.nav-mobile { 
+    display: none;
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    right: 0; 
+    background-color: var(--color-primary);
+    padding: var(--space-1) var(--space-2); 
+    justify-content: space-around;
+    align-items: center;
+    z-index: 100; 
+    border-top: 1px solid var(--color-primary-hover);
+}
+
+.nav-mobile a {
+    color: var(--color-surface); 
+    text-decoration: none;
+    font-size: 0.75rem; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px; 
+    opacity: 0.7;
+    min-width: 60px;
+    text-align: center;
+}
+
+.nav-mobile a.active {
+    opacity: 1;
+    font-weight: 600;
+}
+
+.mobile-nav-add {
+    background-color: white;
+    color: var(--color-primary) !important;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-pill);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    margin-bottom: var(--space-2);
+    min-width: unset !important;
+}
+
+@media (max-width: 768px) {
+    .header-desktop {
+        display: none;
+    }
+    .nav-mobile {
+        display:flex;
+    }
+}
