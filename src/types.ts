@@ -8,7 +8,7 @@ export interface Recipe {
     servings: number
     ingredients: {name: string; amount: string }[]
     steps: string[]
-    category: 'Breakfast' | 'Lunch' | 'Dinner' | 'Appetizer' | 'Side' | 'Dessert'
+    category: 'Breakfast' | 'Lunch' | 'Dinner' | 'Drink' | 'Side' | 'Dessert'
     cuisine?: string
     photoUrl?: string
     tags: string[]

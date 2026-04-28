@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import { recipes } from '../data/recipes'
 import RecipeCard from '../components/RecipeCard'
+import { EggFried, Sandwich, Soup, Salad, CakeSlice, CupSoda } from 'lucide-react'
 import './Home.css'
 
 function Home() {
@@ -10,6 +11,14 @@ function Home() {
     const recentRecipes = recipes.slice(-4)
     const placeholderCount = Math.max(0, 4 - recentRecipes.length)
 
+    const categories = [
+        {name: 'Breakfast', icon: <EggFried size={45} />}, 
+        {name: 'Lunch', icon: <Sandwich size={45} />}, 
+        {name: 'Dinner', icon: <Soup size={45} />},
+        {name: 'Sides', icon: <Salad size={45} />},
+        {name: 'Desserts', icon: <CakeSlice size={45} />}, 
+        {name: 'Drinks', icon: <CupSoda size={45} />}
+    ]
     return (
         <div className="home">
             <section className="hero">
@@ -38,6 +47,22 @@ function Home() {
                                 <span>+</span>
                                 <p>Add a recipe</p>
                             </div>
+                        </Link>
+                    ))}
+                </div>
+            </section>
+
+            <section className="browse-by-category">
+                <h2>Browse by Category</h2>
+                <div className="category-grid">
+                    {categories.map(category => (
+                        <Link 
+                            to={`recipes?categories=${category.name}`}
+                            key={category.name}
+                            className="category-title"
+                        >
+                            {category.icon}
+                            <span>{category.name}</span>
                         </Link>
                     ))}
                 </div>
