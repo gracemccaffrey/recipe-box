@@ -1,4 +1,5 @@
 import Navigation from './Navigation'
+import './Layout.css'
 
 interface LayoutProps {
     children: React.ReactNode
