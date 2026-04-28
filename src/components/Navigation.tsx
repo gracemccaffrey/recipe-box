@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { Home, BookOpen, Plus, Heart, Search } from 'lucide-react'
 import './Navigation.css'
 
 function Navigation() {
@@ -15,13 +16,18 @@ function Navigation() {
                 </nav>
             </header>
 
+            {/* Mobile Top Bar */}
+            <header className="header-mobile-top">
+                <div className="header-brand">The Recipe Box</div>
+            </header>
+
             {/* Mobile Bottom Nav */}
             <nav className="nav-mobile">
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/recipes">Recipes</NavLink>
-                <NavLink to="/recipes/new" className="mobile-nav-add">+</NavLink>
-                <NavLink to="/favorites">Favorites</NavLink>
-                <NavLink to="/search">Search</NavLink>
+                <NavLink to="/"><Home size={20} />Home</NavLink>
+                <NavLink to="/recipes"><BookOpen size={20} />Recipes</NavLink>
+                <NavLink to="/recipes/new" className="mobile-nav-add"><Plus size={24} /></NavLink>
+                <NavLink to="/favorites"><Heart size={20} />Favorites</NavLink>
+                <NavLink to="/search"><Search size={20} />Search</NavLink>
             </nav>
         </>
     )
