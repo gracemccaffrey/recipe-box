@@ -1,0 +1,80 @@
+/* Hero Section */
+.hero {
+    background-color: var(--color-hero);
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    padding: var(--space-5) var(--space-4);
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem; 
+    color: var(--color-primary);
+    line-height: 1.2;
+    margin-bottom: var(--space-2);
+    font-weight: 500;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.hero-buttons { 
+    display: flex; 
+    gap: var(--space-2);
+    justify-content: center;
+}
+
+.hero-buttons button {
+    padding: 12px 28px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background-color: var(--color-primary);
+    color: var(--color-surface); 
+    border: 2px solid var(--color-primary);
+}
+
+.hero-buttons button.hero-button-outline { 
+    background-color: transparent;
+    color: var(--color-primary); 
+}
+
+.hero-buttons button:hover {
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+}
+
+.hero-buttons button.hero-button-outline:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface); 
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-buttons button {
+        width: 100%;
+        max-width: 250px;
+        font-size: 0.78rem;
+    }
+    .hero-content h1 {
+        font-size: 2.4rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
